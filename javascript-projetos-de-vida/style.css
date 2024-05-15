@@ -27,4 +27,88 @@ body {
     width: 100%;
     font-size: 32px;
 }
+.titulo-principal span {
+    color: var(--verde);
+}.botao {
+    font-family: "Crakra Petch", sans-serif;
+    background-color: var(--botao-inativo);
+    color: var(--branco);
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    font-size: 18px;
+    align-items: center;
+    width: 100%;
+    border-bottom: 4px solid var(--botao-ativo); 
+    border-left: 2px solid var(--botao-ativo); 
+    border-right: 2px solid var(--botao-ativo); 
+    border-top: none;
+    .botoes {
+        display: block;
+    }
+    
+    @media screen and (min-width: 768px) {
+        .botoes {
+            display: flex;
+        }
+        .botao:first-child {
+            border-radius: 40px 40px 0 0;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .botoes {
+                display: flex;
+            }
+        
+            .botao:first-child {
+                border-radius: 40px 0 0 0;
+            }
+        
+            .botao:last-child {
+                border-radius: 0 40px 0 0;
+            }
+        }
+        .ativo{
+            background-color: var(--botao-ativo);
+            border-bottom: 4px solid var(--verde);
+        }
+        <button class="botao ativo">Cursos na Alura</button>
+<button class="botao">Criar projetos em Javascript</button>
+<button class="botao">Criar um portfolio</button>
+<button class="botao">Atualizar meu currículo</button>
+<script src="main.js"></script>
+const botoes = document.querySelectorAll(".botao");
+console.log(botoes)
+.ativo{
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--verde);
+}
+<button class="botao ativo">Cursos na Alura</button>
+<button class="botao">Criar projetos em Javascript</button>
+<button class="botao">Criar um portfolio</button>
+<button class="botao">Atualizar meu currículo</button>
+<script src="main.js"></script>
+const botoes = document.querySelectorAll(".botao");
+console.log(botoes)
+for(let i=0; i <  botoes.length; i++){
+    console.log(i);
+}
+botoes[i].onclick = function(){
+    
+    botoes[i].classList.add("ativo");
+}
+for(let j=0;j<botoes.length;j++){
+    botoes[j].classList.remove("ativo");
+}
+const botoes = document.querySelectorAll(".botao");
 
+for(let i=0;i <botoes.length;i++){
+    botoes[i].onclick = function(){
+
+        for(let j=0;j<botoes.length;j++){
+            botoes[j].classList.remove("ativo");
+        }
+
+        botoes[i].classList.add("ativo");
+    }
+}
